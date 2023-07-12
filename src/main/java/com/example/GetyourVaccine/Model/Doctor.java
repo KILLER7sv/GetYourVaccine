@@ -6,16 +6,13 @@ import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 
-import java.util.ArrayList;
-import java.util.List;
-
 @Entity
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
 @Setter
-public class Person {
+public class Doctor {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -30,14 +27,4 @@ public class Person {
 
     @Enumerated(EnumType.STRING)
     Gender gender;
-
-    boolean dose1Taken;
-
-    boolean dose2Taken;
-
-    @OneToMany(mappedBy = "person",cascade = CascadeType.ALL)
-    List<Dose> dosesTaken = new ArrayList<>();
-
-    @OneToOne(mappedBy = "person",cascade = CascadeType.ALL)
-    Certificate certificate;
 }
