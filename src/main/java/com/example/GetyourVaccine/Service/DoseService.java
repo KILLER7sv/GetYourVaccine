@@ -70,6 +70,6 @@ public class DoseService {
         person.getDosesTaken().add(dose);
         Person savedPerson = personRepository.save(person);
 
-        return savedPerson.getDosesTaken().get(0);
+        return dose;
     }
 }

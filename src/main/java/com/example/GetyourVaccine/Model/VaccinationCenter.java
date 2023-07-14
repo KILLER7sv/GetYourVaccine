@@ -2,12 +2,12 @@ package com.example.GetyourVaccine.Model;
 
 
 import com.example.GetyourVaccine.Enum.CenterType;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @FieldDefaults(level = AccessLevel.PRIVATE)
@@ -27,5 +27,6 @@ public class VaccinationCenter {
 
     String address;
 
-
+    @OneToMany(mappedBy = "center" , cascade = CascadeType.ALL)
+    List<Doctor> doctors = new ArrayList<>();
 }
