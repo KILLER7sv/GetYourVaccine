@@ -23,6 +23,7 @@ public class VaccinationCenter {
 
     String centerName;
 
+    @Enumerated(value = EnumType.STRING)
     CenterType centerType;
 
     String address;

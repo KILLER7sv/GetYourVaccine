@@ -28,7 +28,7 @@ public class Person {
     @Column(unique = true)
     String emailId;
 
-    @Enumerated(EnumType.STRING)
+    @Enumerated(value = EnumType.STRING)
     Gender gender;
 
     boolean dose1Taken;
