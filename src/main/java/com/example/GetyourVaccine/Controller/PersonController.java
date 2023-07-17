@@ -37,4 +37,15 @@ public class PersonController {
             return new ResponseEntity(e.getMessage() , HttpStatus.BAD_REQUEST);
         }
     }
+
+
+    // get all males of age greater than a certain age
+
+    // get all females who have only taken dose 1 not dose 2
+
+    // get all people who are fully vaccinated
+
+    // get all the people who have not taken single dose
+
+    // get all females who are greater than a particular age and who have taken only dose 1
 }

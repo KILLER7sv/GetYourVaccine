@@ -22,4 +22,10 @@ public class VaccinationCenterController {
         CenterResponseDto centerResponseDto = vaccinationCenterService.addCenter(centerRequestDto);
         return centerResponseDto;
     }
+
+    // get all the doctor at a certain center type
+
+    // get the center with highest number of doctors
+
+    // get the center with highest number of doctor among a particular center type
 }

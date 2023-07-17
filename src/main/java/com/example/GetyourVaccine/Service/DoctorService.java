@@ -11,6 +11,7 @@ import com.example.GetyourVaccine.exception.CenterNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -18,6 +19,9 @@ import java.util.Optional;
 public class DoctorService {
     @Autowired
     VaccinationCenterRepository vaccinationCenterRepository;
+
+    @Autowired
+    DoctorRepository doctorRepository;
     public DoctorResponseDto addDoctor(DoctorRequestDto doctorRequestDto) {
         Optional<VaccinationCenter> vaccinationCenterOptional = vaccinationCenterRepository.findById(
                 doctorRequestDto.getCenterId());
@@ -56,5 +60,15 @@ public class DoctorService {
         doctorResponseDto.setCenterResponseDto(centerResponseDto);
 
         return doctorResponseDto;
+    }
+
+    public List<String> getByAgeGreaterThan(int age){
+        List<Doctor> doctors = doctorRepository.getByAgeGreaterThan(age);
+        List<String> ans = new ArrayList<>();
+
+        for(Doctor d : doctors){
+            ans.add(d.getName());
+        }
+        return ans;
     }
 }
