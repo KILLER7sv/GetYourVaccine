@@ -74,7 +74,7 @@ public class AppointmentService {
                 center.getAddress() + " at this time: " + savedAppointment.getAppointmentDate()+" Dhanyawad!!!";
 
         SimpleMailMessage simpleMailMessage = new SimpleMailMessage();
-        simpleMailMessage.setFrom("acciojobspring@gmail.com");
+        simpleMailMessage.setFrom("sarthakproject9@gmail.com");
         simpleMailMessage.setTo(savedPerson.getEmailId());
         simpleMailMessage.setSubject("Congrats!! Appointment Done!!");
         simpleMailMessage.setText(text);
