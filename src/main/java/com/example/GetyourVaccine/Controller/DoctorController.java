@@ -19,11 +19,13 @@ public class DoctorController {
 
     @PostMapping("/add")
     public ResponseEntity addDoctor(@RequestBody DoctorRequestDto doctorRequestDto){
+
         try{
             DoctorResponseDto doctorResponseDto = doctorService.addDoctor(doctorRequestDto);
-            return new ResponseEntity(doctorResponseDto , HttpStatus.CREATED);
-        }catch(Exception e){
-            return new ResponseEntity(e.getMessage() , HttpStatus.BAD_REQUEST);
+            return new ResponseEntity(doctorResponseDto,HttpStatus.CREATED);
+        }
+        catch (Exception e){
+            return new ResponseEntity(e.getMessage(), HttpStatus.BAD_REQUEST);
         }
     }
 
@@ -33,9 +35,9 @@ public class DoctorController {
         return doctors;
     }
 
-    //get the doctor with highest appointments
+    // get the doctor with highest number of appointments
 
-    // get the doctor that belong to a particular center
+    // get the list of doctors who belong to a particular center
 
     // api to update email and/or age of a doctor
 

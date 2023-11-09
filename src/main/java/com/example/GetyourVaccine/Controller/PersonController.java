@@ -27,25 +27,27 @@ public class PersonController {
     }
 
     @PutMapping("/update_email")
-    public ResponseEntity updateEmail(@RequestParam("oldEmail") String oldEmail ,
+    public ResponseEntity updateEmail(@RequestParam("oldEmail") String oldEmail,
                                       @RequestParam("newEmail") String newEmail){
+
         try{
-            String response = personService.updateEmail(oldEmail , newEmail);
-            return new ResponseEntity(response , HttpStatus.ACCEPTED);
+            String response = personService.updateEmail(oldEmail,newEmail);
+            return new ResponseEntity(response,HttpStatus.ACCEPTED);
         }
         catch (Exception e){
-            return new ResponseEntity(e.getMessage() , HttpStatus.BAD_REQUEST);
+            return new ResponseEntity(e.getMessage(),HttpStatus.BAD_REQUEST);
         }
     }
 
-
     // get all males of age greater than a certain age
 
-    // get all females who have only taken dose 1 not dose 2
+    // get all females who have taken only dose 1 not dose 2
 
-    // get all people who are fully vaccinated
+    // get all the people who are fully vaccinated
 
-    // get all the people who have not taken single dose
+    // get all the people who have not taken even a single dose
 
-    // get all females who are greater than a particular age and who have taken only dose 1
+    // get all females whose age is greater than a particular age and who have taken only dose 1
+
+    // get all males whose age is greater than a particular age and who have taken both
 }

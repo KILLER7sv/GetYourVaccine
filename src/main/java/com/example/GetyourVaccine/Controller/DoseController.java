@@ -34,12 +34,13 @@ public class DoseController {
     public ResponseEntity getDose1(@RequestBody BookDose1RequestDto bookDose1RequestDto){
 
         try{
-
             Dose doseTake = doseService.getDose1(bookDose1RequestDto);
-            return new ResponseEntity(doseTake, HttpStatus.CREATED);
+            return new ResponseEntity(doseTake,HttpStatus.CREATED);
         }
         catch (Exception e){
             return new ResponseEntity(e.getMessage(), HttpStatus.BAD_REQUEST);
         }
     }
+
+    // get Dose 2
 }

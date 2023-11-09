@@ -15,17 +15,19 @@ import org.springframework.web.bind.annotation.RestController;
 public class VaccinationCenterController {
 
     @Autowired
-    VaccinationCenterService vaccinationCenterService;
+    VaccinationCenterService centerService;
 
     @PostMapping("/add")
     public CenterResponseDto addCenter(@RequestBody CenterRequestDto centerRequestDto){
-        CenterResponseDto centerResponseDto = vaccinationCenterService.addCenter(centerRequestDto);
+
+        CenterResponseDto centerResponseDto = centerService.addCenter(centerRequestDto);
         return centerResponseDto;
     }
 
-    // get all the doctor at a certain center type
+    // get all the doctors at centers of a particular centerType
 
     // get the center with highest number of doctors
 
-    // get the center with highest number of doctor among a particular center type
+    // get the center with highest number of doctors among a particular centerType
+
 }
