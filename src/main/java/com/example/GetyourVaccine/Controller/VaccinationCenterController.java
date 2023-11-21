@@ -1,6 +1,6 @@
 package com.example.GetyourVaccine.Controller;
 
-import com.example.GetyourVaccine.Model.VaccinationCenter;
+
 import com.example.GetyourVaccine.Service.VaccinationCenterService;
 import com.example.GetyourVaccine.dto.RequestDto.CenterRequestDto;
 import com.example.GetyourVaccine.dto.ResponseDto.CenterResponseDto;
@@ -20,7 +20,8 @@ public class VaccinationCenterController {
     @PostMapping("/add")
     public CenterResponseDto addCenter(@RequestBody CenterRequestDto centerRequestDto){
 
-        return centerService.addCenter(centerRequestDto);
+        CenterResponseDto centerResponseDto = centerService.addCenter(centerRequestDto);
+        return centerResponseDto;
     }
 
     // get all the doctors at centers of a particular centerType

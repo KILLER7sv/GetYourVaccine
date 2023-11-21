@@ -1,7 +1,7 @@
 package com.example.GetyourVaccine.Enum;
 
 public enum CenterType {
-    PRIVATE_HOSPITAL,
+    HOSPITAL_PRIVATE,
     GOVERNMENT_HOSPITAL,
     NGO
 }
