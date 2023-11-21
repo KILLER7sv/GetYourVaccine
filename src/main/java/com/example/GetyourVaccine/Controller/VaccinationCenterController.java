@@ -20,8 +20,7 @@ public class VaccinationCenterController {
     @PostMapping("/add")
     public CenterResponseDto addCenter(@RequestBody CenterRequestDto centerRequestDto){
 
-        CenterResponseDto centerResponseDto = centerService.addCenter(centerRequestDto);
-        return centerResponseDto;
+        return centerService.addCenter(centerRequestDto);
     }
 
     // get all the doctors at centers of a particular centerType
